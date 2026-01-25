@@ -45,23 +45,18 @@ const authenticateAdmin = (req, res, next) => {
     if (decoded.role !== 'ADMIN') {
       return res.status(403).json({
         success: false,
-        message: 'Access denied. Admin privileges required.',
+        message: 'Access denied. Admin privileges required.'
       });
     }
 
     // Attach admin info to request object
-   // req.admin = {
-    //  email: decoded.email,
-    //  role: decoded.role,
-   // };
+      req.admin = {
+      email: decoded.email,
+      role: decoded.role,
+   };
 
-    req.admin = {
-  id: decoded.id,        // ✅ NEW
-  email: 'bhangartalgiab@gmail.com',
-  role: decoded.role,
-};
-
-    // Proceed to next middleware
+    
+  // Proceed to next middleware
     next();
   } catch (error) {
     if (error.name === 'JsonWebTokenError') {
@@ -87,5 +82,6 @@ const authenticateAdmin = (req, res, next) => {
 };
 
 module.exports = { authenticateAdmin };
+
 
 
