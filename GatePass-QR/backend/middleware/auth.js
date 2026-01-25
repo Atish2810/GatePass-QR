@@ -50,10 +50,16 @@ const authenticateAdmin = (req, res, next) => {
     }
 
     // Attach admin info to request object
+   // req.admin = {
+    //  email: decoded.email,
+    //  role: decoded.role,
+   // };
+
     req.admin = {
-      email: decoded.email,
-      role: decoded.role,
-    };
+  id: decoded.id,        // ✅ NEW
+  email: 'bhangartalgiab@gmail.com',
+  role: decoded.role,
+};
 
     // Proceed to next middleware
     next();
@@ -81,4 +87,5 @@ const authenticateAdmin = (req, res, next) => {
 };
 
 module.exports = { authenticateAdmin };
+
 
