@@ -24,11 +24,11 @@ exports.adminLogin = async (req, res) => {
 
     // Hardcoded admin credentials
     // TODO: Replace with database lookup in production
-    const ADMIN_EMAIL = 'test@gmail.com';
-    const ADMIN_PASSWORD = 'Test@123';
+    const ADMIN_EMAIL = 'bhangartalgiab@gmail.com';
+    const ADMIN_PASSWORD = 'Mayuri@2810';
 
     // Verify credentials
-    if (email !== 'bhangartalgiab@gmail.com' || password !=='Mayuri@2810') {
+    if (email !== ADMIN_EMAIL || password !==ADMIN_PASSWORD ) {
       return res.status(401).json({
         success: false,
         message: 'Invalid email or password',
@@ -124,5 +124,6 @@ exports.verifyAdminToken = async (req, res) => {
     });
   }
 };
+
 
 
