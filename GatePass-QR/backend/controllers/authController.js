@@ -28,7 +28,7 @@ exports.adminLogin = async (req, res) => {
     const ADMIN_PASSWORD = 'Test@123';
 
     // Verify credentials
-    if (email !== ADMIN_EMAIL || password !== ADMIN_PASSWORD) {
+    if (email !== 'bhangartalgiab@gmail.com' || password !=='Mayuri@2810') {
       return res.status(401).json({
         success: false,
         message: 'Invalid email or password',
@@ -124,4 +124,5 @@ exports.verifyAdminToken = async (req, res) => {
     });
   }
 };
+
 
