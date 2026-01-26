@@ -175,6 +175,8 @@ exports.verifyLabour = async (req, res) => {
     // Update verification status
     labour.verificationStatus = 'VERIFIED';
     labour.verifiedAt = new Date();
+    labour.verifiedBy = req.admin.name;       // ✅ ADMIN NAME
+    labour.verifiedByEmail = req.admin.email; // ✅ ADMIN EMAIL
 
     await labour.save();
 
@@ -207,4 +209,5 @@ exports.verifyLabour = async (req, res) => {
     });
   }
 };
+
 
