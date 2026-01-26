@@ -27,7 +27,13 @@ router.get('/:labourId', labourController.getLabourById);
  * Only users with ADMIN role can verify labour.
  * Backend enforces this - frontend hiding button is not enough.
  */
-router.put('/:labourId/verify', authenticateAdmin, labourController.verifyLabour);
+//router.put('/:labourId/verify', authenticateAdmin, labourController.verifyLabour);
+router.put(
+  '/verify/:id',
+  authenticateAdmin,   // 🔐 ADMIN CHECK HERE
+  verifyLabour
+);
 
 module.exports = router;
+
 
