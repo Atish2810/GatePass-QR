@@ -153,6 +153,12 @@ exports.getLabourById = async (req, res) => {
  * PUT /api/labour/:labourId/verify
  */
 exports.verifyLabour = async (req, res) => {
+   if (!req.admin) {
+    return res.status(403).json({
+      success: false,
+      message: 'Admin login required to verify labour',
+    });
+  }
   try {
     const { labourId } = req.params;
 
@@ -209,5 +215,6 @@ exports.verifyLabour = async (req, res) => {
     });
   }
 };
+
 
 
