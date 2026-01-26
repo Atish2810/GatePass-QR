@@ -39,8 +39,12 @@ exports.adminLogin = async (req, res) => {
     const jwtSecret = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
     const token = jwt.sign(
       {
-        email: ADMIN_EMAIL,
-        role: 'ADMIN',
+        //email: ADMIN_EMAIL,
+        //role: 'ADMIN',
+          adminId: 'ADMIN01',
+          name: 'Atish Bhangartalgi',
+          email: ADMIN_EMAIL,
+          role: 'ADMIN',
       },
       jwtSecret,
       {
@@ -124,6 +128,7 @@ exports.verifyAdminToken = async (req, res) => {
     });
   }
 };
+
 
 
 
