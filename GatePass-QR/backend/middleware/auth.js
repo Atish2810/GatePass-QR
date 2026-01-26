@@ -50,9 +50,12 @@ const authenticateAdmin = (req, res, next) => {
     }
 
     // Attach admin info to request object
-      req.admin = {
-      email: decoded.email,
-      role: decoded.role,
+      // req.admin = {
+      // email: decoded.email,
+      // role: decoded.role,
+        adminId: decoded.adminId,
+        name: decoded. name,
+        email: decoded.email,
    };
 
     
@@ -82,6 +85,7 @@ const authenticateAdmin = (req, res, next) => {
 };
 
 module.exports = { authenticateAdmin };
+
 
 
 
