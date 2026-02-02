@@ -141,7 +141,7 @@ const AdminLoginPage = () => {
 
         <div className="admin-login-footer">
           <p className="admin-credentials-hint">
-            Default credentials: test@gmail.com / Test@123
+            Default credentials: bhangartalgiab@gmail.com / Atish@2810
           </p>
         </div>
       </div>
@@ -150,4 +150,5 @@ const AdminLoginPage = () => {
 };
 
 export default AdminLoginPage;
+
 
